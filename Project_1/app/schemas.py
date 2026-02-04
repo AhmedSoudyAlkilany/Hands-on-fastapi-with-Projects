@@ -29,7 +29,7 @@ class TextAnalysisResponse(BaseModel):
     original_text: str
     language: LanguageCode
     word_count: int
-    chatacter_count: int
+    character_count: int
     sentiment: SentimentResult
     keywords: Optional[List[str]] = None
     summary: Optional[str] = None

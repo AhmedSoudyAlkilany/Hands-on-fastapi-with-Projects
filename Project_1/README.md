@@ -1,0 +1,1 @@
+# first project [AI Text Analyzer]

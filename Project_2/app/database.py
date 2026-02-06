@@ -11,3 +11,9 @@ engine = create_async_engine(
 )
 
 Base = declarative_base()
+
+async def init_db():
+    "Initialize the database by creating all tables."
+    async with engine.begin() as conn:
+        from app import models
+        await conn.run_sync(Base.metadata.create_all)

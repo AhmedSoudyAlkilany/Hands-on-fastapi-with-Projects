@@ -36,7 +36,7 @@ class PromptUpdate(BaseModel):
 
 class PromptResponse(PromptBase):
     id: int
-    rating: float
+    rating: Optional[float] = None
     usage_count: int
     is_favorite: bool
     created_at: datetime

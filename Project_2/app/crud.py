@@ -15,6 +15,10 @@ class CategoryCRUD:
         return category
 
     @staticmethod
+    async def create(db: AsyncSession, data: schemas.CategoryCreate) -> models.Category:
+        return await CategoryCRUD.create_category(db, data)
+
+    @staticmethod
     async def get_all(db: AsyncSession) -> List[models.Category]:
         result = await db.execute(select(models.Category))
         return result.scalars().all()

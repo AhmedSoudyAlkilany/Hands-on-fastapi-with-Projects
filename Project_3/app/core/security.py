@@ -5,7 +5,8 @@ from typing import Optional, Dict, Any
 from app.config import get_settings
 
 settings = get_settings()
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# bcrypt_sha256 avoids the 72-byte bcrypt password limit while keeping bcrypt compatibility.
+pwd_context = CryptContext(schemes=["bcrypt_sha256", "bcrypt"], deprecated="auto")
 
 # password 
 def hash_password(password: str) -> str:
